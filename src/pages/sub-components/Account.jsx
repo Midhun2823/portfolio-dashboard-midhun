@@ -16,7 +16,11 @@ const Account = () => {
             <ul className="navbar-nav ">
               <li className="nav-item">
                 <Link
-                  className="nav-link"
+                  className={`nav-link ${
+                    selectedComponent === "Profile"
+                      ? "active text-decoration-underline"
+                      : ""
+                  }`}
                   onClick={() => setSelectedComponent("Profile")}
                 >
                   Profile
@@ -24,7 +28,11 @@ const Account = () => {
               </li>
               <li>
                 <Link
-                  className="nav-link"
+                  className={`nav-link ${
+                    selectedComponent === "Update Profile"
+                      ? "active text-decoration-underline"
+                      : ""
+                  }`}
                   onClick={() => setSelectedComponent("Update Profile")}
                 >
                   Update Profile
@@ -32,10 +40,12 @@ const Account = () => {
               </li>
               <li>
                 <Link
-                  className="nav-link"
-                  onClick={() =>
-                    setSelectedComponent("Update Password")
-                  }
+                  className={`nav-link ${
+                    selectedComponent === "Update Password"
+                      ? "active text-decoration-underline"
+                      : ""
+                  }`}
+                  onClick={() => setSelectedComponent("Update Password")}
                 >
                   Update Password
                 </Link>

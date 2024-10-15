@@ -31,3 +31,7 @@
   background: transparent;
   color: #111
 }
+
+label {
+  font-weight: bold;
+}

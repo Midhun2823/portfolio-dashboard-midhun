@@ -116,6 +116,7 @@ const UpdateProfile = () => {
               height={132}
               className="m-2"
             />
+            <br />
             <input
               type="file"
               className="btn btn-outline-dark"
@@ -134,6 +135,7 @@ const UpdateProfile = () => {
                 className="m-2"
               />
             </Link>
+            <br />
             <input
               type="file"
               className="btn btn-outline-dark"
@@ -141,7 +143,7 @@ const UpdateProfile = () => {
             />
           </div>
         </div>
-        <div className="mt-2">
+        <div className="my-3">
           <label>Full Name</label>
           <input
             type="text"
@@ -151,7 +153,7 @@ const UpdateProfile = () => {
             onChange={(e) => setFullName(e.target.value)}
           />
         </div>
-        <div className="mt-2">
+        <div className="my-3">
           <label>Email</label>
           <input
             type="email"
@@ -161,7 +163,7 @@ const UpdateProfile = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="mt-2">
+        <div className="my-3">
           <label>Phone</label>
           <input
             type="text"
@@ -171,7 +173,7 @@ const UpdateProfile = () => {
             onChange={(e) => setPhone(e.target.value)}
           />
         </div>
-        <div className="mt-2">
+        <div className="my-3">
           <label>About Me</label>
           <textarea
             className="form-control"
@@ -180,7 +182,7 @@ const UpdateProfile = () => {
             onChange={(e) => setAboutMe(e.target.value)}
           />
         </div>
-        <div className="mt-2">
+        <div className="my-3">
           <label>Portfolio URL</label>
           <input
             className="form-control"
@@ -189,7 +191,7 @@ const UpdateProfile = () => {
             onChange={(e) => setPortfolioURL(e.target.value)}
           />
         </div>
-        <div className="mt-2">
+        <div className="my-3">
           <label>Github URL</label>
           <input
             className="form-control"
@@ -198,7 +200,7 @@ const UpdateProfile = () => {
             onChange={(e) => setGithubURL(e.target.value)}
           />
         </div>
-        <div className="mt-2">
+        <div className="my-3">
           <label>LinkedIn URL</label>
           <input
             className="form-control"
@@ -207,7 +209,7 @@ const UpdateProfile = () => {
             onChange={(e) => setLinkedInURL(e.target.value)}
           />
         </div>
-        <div className="mt-2">
+        <div className="my-3">
           <label>Instagram URL</label>
           <input
             className="form-control"
@@ -216,7 +218,7 @@ const UpdateProfile = () => {
             onChange={(e) => setInstagramURL(e.target.value)}
           />
         </div>
-        <div className="mt-2">
+        <div className="my-3">
           <label>Twitter(X) URL</label>
           <input
             className="form-control"
@@ -225,7 +227,7 @@ const UpdateProfile = () => {
             onChange={(e) => setTwitterURL(e.target.value)}
           />
         </div>
-        <div className="mt-2">
+        <div className="my-3">
           <label>Facebook URL</label>
           <input
             className="form-control"
@@ -234,11 +236,11 @@ const UpdateProfile = () => {
             onChange={(e) => setFacebookURL(e.target.value)}
           />
         </div>
-        <div className="mt-2">
+        <div className="my-3">
           {!loading ? (
             <button
               onClick={handleUpdateProfile}
-              className="form-control btn btn-outline-dark"
+              className="form-control btn btn-outline-dark my-3"
             >
               Update Profile
             </button>

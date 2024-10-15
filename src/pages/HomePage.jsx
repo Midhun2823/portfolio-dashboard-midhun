@@ -36,8 +36,8 @@ const HomePage = () => {
   }, [isAuthenticated]);
 
   return (
-    <>
-      <div>
+    <div className="mb-4">
+      <div >
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid">
             <img
@@ -163,7 +163,7 @@ const HomePage = () => {
           <img
             src={user && user.avatar && user.avatar.url}
             alt="avatar"
-            className=""
+            className="rounded"
             width={102}
             height={132}
           />
@@ -191,7 +191,7 @@ const HomePage = () => {
             return <Dashboard />;
         }
       })()}
-    </>
+    </div>
   );
 };
 

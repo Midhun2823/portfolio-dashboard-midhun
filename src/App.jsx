@@ -14,15 +14,15 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { getUser } from "./store/slices/userSlice";
-import "./App.css"
+import "./App.css";
+import { getAllMessages } from "./store/slices/messagesSlice";
 
 const App = () => {
-
-  const dispatch= useDispatch()
-  useEffect(()=> {
-    dispatch(getUser())
-  },[])
-
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getUser());
+    dispatch(getAllMessages());
+  }, []);
 
   return (
     <Router>
@@ -37,7 +37,7 @@ const App = () => {
         <Route path="/view/project/:id" element={<ViewProject />} />
         <Route path="/update/project/:id" element={<UpdateProject />} />
       </Routes>
-      <ToastContainer position="bottom-right" theme="dark"/>
+      <ToastContainer position="bottom-right" theme="dark" />
     </Router>
   );
 };

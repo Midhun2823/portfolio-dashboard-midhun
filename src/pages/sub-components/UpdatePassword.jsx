@@ -40,7 +40,6 @@ const UpdatePassword = () => {
             <p>Update Your Dashboard Password</p>
           </div>
         </div>
-
         <div className="my-3">
           <label>Current Password</label>
           <input

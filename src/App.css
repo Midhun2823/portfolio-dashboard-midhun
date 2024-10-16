@@ -14,7 +14,7 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 7px;
-  background: linear-gradient(#642bff, #ff22e6);
+  background:linear-gradient(109.6deg, rgb(14, 11, 56) 11.2%, rgb(239, 37, 37) 91.1%);
 }
 
 .avatar-update-btn::file-selector-button {

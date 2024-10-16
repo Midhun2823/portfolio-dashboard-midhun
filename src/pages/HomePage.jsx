@@ -91,6 +91,19 @@ const HomePage = () => {
                 <li className="nav-item">
                   <Link
                     className={`nav-link ${
+                      active === "Add Skills"
+                        ? "active text-decoration-underline"
+                        : ""
+                    }`}
+                    aria-current="page"
+                    onClick={() => setActive("Add Skills")}
+                  >
+                    Add Skills
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link ${
                       active === "Add Application"
                         ? "active text-decoration-underline"
                         : ""
@@ -149,7 +162,7 @@ const HomePage = () => {
                   aria-label="Search"
                 />
                 <Link
-                  className="btn btn-outline-success"
+                  className="btn btn-outline-danger"
                   type="submit"
                   onClick={handleLogout}
                 >
@@ -159,15 +172,15 @@ const HomePage = () => {
             </div>
           </div>
         </nav>
-        <div>
+        <div className="border border-2 border-dark mb-4">
           <img
             src={user && user.avatar && user.avatar.url}
             alt="avatar"
-            className="rounded"
+            className="rounded m-3"
             width={102}
-            height={132}
+            height={102}
           />
-          <span className="display-6">Welcome {user.fullName}</span>
+          <span className="ms-4 display-6">Welcome {user.fullName}</span>
         </div>
       </div>
       {(() => {

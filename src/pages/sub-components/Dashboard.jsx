@@ -48,7 +48,10 @@ const Dashboard = () => {
             <div className="card h-100">
               <div className="card-body">
                 <p className="card-text">{user.aboutMe}</p>
-                <Link to={user.portfolioURL && user.portfolioURL}>
+                <Link
+                  to={user.portfolioURL && user.portfolioURL}
+                  target="_blank"
+                >
                   <button className="btn btn-dark">Vist Portfolio</button>
                 </Link>
               </div>
@@ -105,6 +108,7 @@ const Dashboard = () => {
                           <td>
                             <Link
                               to={ele.projectLink ? `${ele.projectLink}` : ""}
+                              target="_blank"
                             >
                               <button className="btn btn-dark">Visit</button>
                             </Link>

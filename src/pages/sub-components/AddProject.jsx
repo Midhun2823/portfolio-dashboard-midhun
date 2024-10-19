@@ -191,9 +191,9 @@ const AddProject = () => {
                 ) : (
                   <img
                     src="/PhotoIcon.png"
-                    width={60}
-                    height={60}
                     className="m-4"
+                    width={102}
+                    height={132}
                   />
                 )}
                 <br />

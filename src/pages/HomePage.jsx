@@ -172,15 +172,15 @@ const HomePage = () => {
             </div>
           </div>
         </nav>
-        <div className="border border-2 border-dark mb-4">
+        <div className="border border-2 border-dark mb-2 d-flex">
           <img
             src={user && user.avatar && user.avatar.url}
             alt="avatar"
-            className="rounded m-3"
-            width={102}
-            height={102}
+            className="rounded m-1"
+            width={60}
+            height={60}
           />
-          <span className="ms-4 display-6">Welcome {user.fullName}</span>
+          <p className="mt-1 ms-4 display-6">Welcome {user.fullName}</p>
         </div>
       </div>
       {(() => {

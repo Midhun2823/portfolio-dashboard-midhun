@@ -29,9 +29,17 @@ const AddProject = () => {
     };
   };
 
-  const { loading, error, message } = useSelector(
-    (state) => state.project
-  );
+  const stackarr = ["MEAN", "MERN", "JAVA", "Python"];
+  const handleStack = (event) => {
+    setStack(event.target.value);
+  };
+
+  const deployarr = ["YES", "NO"];
+  const handleDeploy = (event) => {
+    setDeployed(event.target.value);
+  };
+
+  const { loading, error, message } = useSelector((state) => state.project);
   const dispatch = useDispatch();
 
   const handleAddNewProject = (e) => {
@@ -59,7 +67,7 @@ const AddProject = () => {
       dispatch(resetProjectSlice());
       dispatch(getAllProjects());
     }
-  }, [dispatch, loading, error,message]);
+  }, [dispatch, loading, error, message]);
 
   return (
     <>
@@ -108,32 +116,36 @@ const AddProject = () => {
             </div>
             <div className="mb-3">
               <label className="form-label">Stack:</label>
+
               <select
-                class="form-select  mb-3"
-                aria-label="Large select example"
+                class="form-select"
+                aria-label="Default select example"
                 value={stack}
-                onChange={(selectedValue) => setStack(selectedValue)}
+                onChange={handleStack}
               >
-                <option selected>Select Project Stack</option>
-                <option value="Full Stack">Full Stack</option>
-                <option value="MERN">MERN</option>
-                <option value="MEAN">MEAN</option>
-                <option value="MEVN">MEVN</option>
-                <option value="NextJS">NextJS</option>
-                <option value="ReactJs">ReactJs</option>
+                {" "}
+                <option selected>Select Your Stack</option>
+                {stackarr.map((eachstack) => (
+                  <option key={eachstack} value={eachstack}>
+                    {eachstack}
+                  </option>
+                ))}
               </select>
             </div>
             <div className="mb-3">
               <label className="form-label">Deployed:</label>
               <select
-                class="form-select  mb-3"
+                className="form-select  mb-3"
                 aria-label="Large select example"
                 value={deployed}
-                onChange={(selectedValue) => setDeployed(selectedValue)}
+                onChange={handleDeploy}
               >
                 <option selected>Is Project Deployed</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
+                {deployarr.map((eachdeploystage) => (
+                  <option key={eachdeploystage} value={eachdeploystage}>
+                    {eachdeploystage}
+                  </option>
+                ))}
               </select>
             </div>
 
@@ -162,7 +174,6 @@ const AddProject = () => {
                 }}
               />
             </div>
-
 
             <div className="mb-3">
               <label className="form-label">Project Banner</label> <br />

@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const ManageProjects = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <>
+      <div> </div>
+    </>
+  );
+};
 
-export default ManageProjects
+export default ManageProjects;

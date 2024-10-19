@@ -64,7 +64,7 @@ const AddSkills = () => {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Marticulation"
+                placeholder="Enter Your Skills"
                 value={title}
                 onChange={(e) => {
                   setTitle(e.target.value);
@@ -76,7 +76,7 @@ const AddSkills = () => {
               <input
                 type="number"
                 className="form-control"
-                placeholder="34"
+                placeholder="32"
                 value={proficiency}
                 onChange={(e) => {
                   setProficiency(e.target.value);

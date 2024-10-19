@@ -53,7 +53,7 @@ const AddApplication = () => {
         <div className="col-md-6 ">
           <form onSubmit={handleAddNewApplication}>
             <div>
-              <h2>Add A New Application</h2>
+              <h2>Add New Application</h2>
             </div>
             <div className="mb-3">
               <label className="form-label">Software Application Name:</label>

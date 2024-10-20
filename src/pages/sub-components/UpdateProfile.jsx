@@ -113,7 +113,7 @@ const UpdateProfile = () => {
               src={avatarPreview ? avatarPreview : "./Portfolio_Icon.png"}
               alt="avatar"
               width={102}
-              height={132}
+              height={102}
               className="m-2"
             />
             <br />
@@ -131,7 +131,7 @@ const UpdateProfile = () => {
                 src={resumePreview ? resumePreview : "./Portfolio_Icon.png"}
                 alt="resume"
                 width={102}
-                height={132}
+                height={102}
                 className="m-2"
               />
             </Link>

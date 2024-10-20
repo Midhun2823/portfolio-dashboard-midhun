@@ -75,7 +75,7 @@ const AddProject = () => {
         <div className="col-md-3"></div>{" "}
         <div className="col-md-6 ">
           <form onSubmit={handleAddNewProject}>
-            <div>
+            <div className="text-center text-decoration-underline">
               <h2>ADD A NEW PROJECT</h2>
             </div>
             <div className="mb-3">
@@ -185,15 +185,15 @@ const AddProject = () => {
                         ? `${projectBannerPreview}`
                         : "/PhotoIcon.png"
                     }
-                    width={102}
-                    height={132}
+                    width="100%"
+                    height={300}
                   />
                 ) : (
                   <img
                     src="/PhotoIcon.png"
                     className="m-4"
                     width={102}
-                    height={132}
+                    height={102}
                   />
                 )}
                 <br />
@@ -201,7 +201,7 @@ const AddProject = () => {
                   // id="file-upload"
                   // name="file-upload"
                   type="file"
-                  className="btn btn-outline-dark"
+                  className="btn btn-outline-dark mt-2"
                   onChange={handleProjectBanner}
                 />
               </div>
@@ -216,7 +216,7 @@ const AddProject = () => {
                   </div>
                 </div>
               ) : (
-                <button type="submit" className="btn btn-outline-dark mt-5">
+                <button type="submit" className="btn btn-outline-dark mt-3">
                   Add Project
                 </button>
               )}

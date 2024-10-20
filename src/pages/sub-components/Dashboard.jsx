@@ -40,6 +40,12 @@ const Dashboard = () => {
     }
   }, [dispatch, error, message, loading]);
 
+  var aboutMeInListFormat;
+  try {
+    aboutMeInListFormat = user.aboutMe.split(". ");
+  } catch (error) {
+    aboutMeInListFormat = user.aboutMe
+  }
   return (
     <>
       <div className="mx-1">
@@ -47,12 +53,20 @@ const Dashboard = () => {
           <div className="col-md-6">
             <div className="card h-100">
               <div className="card-body">
-                <p className="card-text">{user.aboutMe}</p>
+                {user.aboutMe ? <ul type="circle">
+                  {aboutMeInListFormat.map((item, index) => {
+                    return (
+                      <li className="" key={index}>
+                        {item}
+                      </li>
+                    );
+                  })}
+                </ul> : <p>{user.aboutMe}</p>}
                 <Link
                   to={user.portfolioURL && user.portfolioURL}
                   target="_blank"
                 >
-                  <button className="btn btn-dark">Vist Portfolio</button>
+                  <button className="btn btn-dark">Visit Portfolio</button>
                 </Link>
               </div>
             </div>

@@ -19,8 +19,8 @@ const Profile = () => {
             <img
               src={user && user.avatar && user.avatar.url}
               alt="avatar"
-              width={102}
-              height={132}
+              width={190}
+              height={190}
               className="m-2"
             />
           </div>
@@ -30,8 +30,8 @@ const Profile = () => {
             <img
               src={user && user.resume && user.resume.url}
               alt="avatar"
-              width={102}
-              height={132}
+              width={190}
+              height={190}
               className="m-2"
             />
           </div>

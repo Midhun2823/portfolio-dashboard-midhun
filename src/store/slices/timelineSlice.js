@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const url = import.meta.env.VITE_PORTFOLIO_BACKEND_URL;
+
 const timelineSlice = createSlice({
   name: "timeline",
   initialState: {
@@ -72,7 +74,7 @@ export const getAllTimeline = () => async (dispatch) => {
   dispatch(timelineSlice.actions.getAllTimelineRequest());
   try {
     const { data } = await axios.get(
-      "http://localhost:4000/api/v1/timeline/getall",
+      `${url}/api/v1/timeline/getall`,
       { withCredentials: true }
     );
     dispatch(timelineSlice.actions.getAllTimelineSuccess(data.timelines));
@@ -88,7 +90,7 @@ export const deleteTimeline = (id) => async (dispatch) => {
   dispatch(timelineSlice.actions.deleteTimelineRequest());
   try {
     const { data } = await axios.delete(
-      `http://localhost:4000/api/v1/timeline/delete/${id}`,
+      `${url}/api/v1/timeline/delete/${id}`,
       { withCredentials: true }
     );
     dispatch(timelineSlice.actions.deleteTimelineSuccess(data.message));
@@ -104,7 +106,7 @@ export const addNewTimeline = (timelineData) => async (dispatch) => {
   dispatch(timelineSlice.actions.addTimelineRequest());
   try {
     const { data } = await axios.post(
-      `http://localhost:4000/api/v1/timeline/add`,
+      `${url}/api/v1/timeline/add`,
       timelineData,
       { withCredentials: true, headers: { "Content-type": "application/json" } }
     );

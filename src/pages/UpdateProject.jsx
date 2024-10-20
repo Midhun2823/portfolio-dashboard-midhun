@@ -46,10 +46,12 @@ const UpdateProject = () => {
     setDeployed(event.target.value);
   };
 
+  const url = import.meta.env.VITE_PORTFOLIO_BACKEND_URL;
+
   useEffect(() => {
     const getProject = async () => {
       await axios
-        .get(`http://localhost:4000/api/v1/project/get/${id}`, {
+        .get(`${url}/api/v1/project/get/${id}`, {
           withCredentials: true,
         })
         .then((res) => {

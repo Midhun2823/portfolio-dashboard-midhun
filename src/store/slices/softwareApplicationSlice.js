@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const url = import.meta.env.VITE_PORTFOLIO_BACKEND_URL;
 
 const softwareApplicationSlice = createSlice({
   name: "application",
@@ -75,7 +76,7 @@ export const getAllSoftwareApplications = () => async (dispatch) => {
   dispatch(softwareApplicationSlice.actions.getAllSoftwareApplicationsRequest());
   try {
     const { data } = await axios.get(
-      "http://localhost:4000/api/v1/softwareapplication/getall",
+      `${url}/api/v1/softwareapplication/getall`,
       { withCredentials: true }
     );
     dispatch(softwareApplicationSlice.actions.getAllSoftwareApplicationsSuccess(data.softwareApplications)); // data.skills -> skills is name given in the backend
@@ -91,7 +92,7 @@ export const addNewSoftwareApplication = (data) => async (dispatch) => {
   dispatch(softwareApplicationSlice.actions.addNewSoftwareRequest());
   try {
     const response = await axios.post(
-      "http://localhost:4000/api/v1/softwareapplication/add",
+      `${url}/api/v1/softwareapplication/add`,
       data,
       {
         withCredentials: true,
@@ -109,7 +110,7 @@ export const deleteSoftwareApplication = (id) => async (dispatch) => {
   dispatch(softwareApplicationSlice.actions.deleteApplicationRequest());
   try {
     const { data } = await axios.delete(
-      `http://localhost:4000/api/v1/softwareapplication/delete/${id}`,
+      `${url}/api/v1/softwareapplication/delete/${id}`,
       { withCredentials: true }
     );
     dispatch(softwareApplicationSlice.actions.deleteApplicationSuccess(data.message));

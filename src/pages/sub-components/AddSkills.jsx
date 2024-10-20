@@ -56,7 +56,7 @@ const AddSkills = () => {
         <div className="col-md-3"></div>{" "}
         <div className="col-md-6 ">
           <form onSubmit={handleAddNewSkill}>
-            <div>
+            <div className="text-center text-decoration-underline">
               <h2>ADD A NEW SKILL</h2>
             </div>
             <div className="mb-3">
@@ -91,7 +91,7 @@ const AddSkills = () => {
                   <img
                     src={svgPreview ? `${svgPreview}` : "/PhotoIcon.png"}
                     width={102}
-                    height={132}
+                    height={102}
                   />
                 ) : (
                   <img src="/PhotoIcon.png" width={190} height={190} />

@@ -15,10 +15,12 @@ const ViewProject = () => {
 
   const { id } = useParams();
 
+  const url = import.meta.env.VITE_PORTFOLIO_BACKEND_URL;
+
   useEffect(() => {
     const getProject = async () => {
       await axios
-        .get(`http://localhost:4000/api/v1/project/get/${id}`, {
+        .get(`${url}/api/v1/project/get/${id}`, {
           withCredentials: true,
         })
         .then((res) => {
@@ -54,7 +56,7 @@ const ViewProject = () => {
           <div>
             {" "}
             <div className="mb-3">
-              <span className="display-6 ">VIEW PROJECT</span>
+              <span className="display-6 ">PROJECT VIEW</span>
               <Link to={"/"} className="float-end btn btn-dark mt-2">
                 Return to Dashboard
               </Link>

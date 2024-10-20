@@ -52,8 +52,8 @@ const AddApplication = () => {
         <div className="col-md-3"></div>{" "}
         <div className="col-md-6 ">
           <form onSubmit={handleAddNewApplication}>
-            <div>
-              <h2>Add New Application</h2>
+            <div className="text-center text-decoration-underline">
+              <h2>ADD NEW APPLICATION</h2>
             </div>
             <div className="mb-3">
               <label className="form-label">Software Application Name:</label>

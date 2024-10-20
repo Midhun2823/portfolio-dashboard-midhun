@@ -46,7 +46,7 @@ const AddTimeline = () => {
         <div className="col-md-3"></div>{" "}
         <div className="col-md-6 ">
           <form onSubmit={handleAddNewTimeline}>
-            <div>
+            <div className="text-center text-decoration-underline">
               <h2>ADD A NEW TIMELINE</h2>
             </div>
             <div className="mb-3">

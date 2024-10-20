@@ -88,7 +88,7 @@ export const getAllProjects = () => async (dispatch) => {
   dispatch(projectSlice.actions.getAllProjectsSuccess());
   try {
     const { data } = await axios.get(
-      "http://localhost:4000/api/v1/project/getall",
+      `${url}/api/v1/project/getall`,
       { withCredentials: true }
     );
     dispatch(projectSlice.actions.getAllProjectsSuccess(data.projects));
@@ -104,7 +104,7 @@ export const addNewProject = (data) => async (dispatch) => {
   dispatch(projectSlice.actions.addNewProjectRequest());
   try {
     const response = await axios.post(
-      "http://localhost:4000/api/v1/project/add",
+      `${url}/api/v1/project/add`,
       data,
       {
         withCredentials: true,
@@ -124,7 +124,7 @@ export const deleteProject = (id) => async (dispatch) => {
   dispatch(projectSlice.actions.deleteProjectRequest());
   try {
     const { data } = await axios.delete(
-      `http://localhost:4000/api/v1/project/delete/${id}`,
+      `${url}/api/v1/project/delete/${id}`,
       { withCredentials: true }
     );
     dispatch(projectSlice.actions.deleteProjectSuccess(data.message));
@@ -140,7 +140,7 @@ export const updateProject = (id, newData) => async (dispatch) => {
   dispatch(projectSlice.actions.updateProjectRequest());
   try {
     const { data } = await axios.put(
-      `http://localhost:4000/api/v1/project/update/${id}`,
+      `${url}/api/v1/project/update/${id}`,
       newData,
       {
         withCredentials: true,

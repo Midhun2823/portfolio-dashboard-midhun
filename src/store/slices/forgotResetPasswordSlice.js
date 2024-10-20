@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const url = import.meta.env.VITE_PORTFOLIO_BACKEND_URL;
+
 const forgotResetPassSlice = createSlice({
   name: "forgotPassword",
   initialState: {
@@ -50,7 +52,7 @@ export const forgotPassword = (email) => async (dispatch) => {
   dispatch(forgotResetPassSlice.actions.forgotPasswordRequest());
   try {
     const { data } = await axios.post(
-      "http://localhost:4000/api/v1/user/password/forget",
+      `${url}/api/v1/user/password/forget`,
       { email },
       { withCredentials: true, headers: { "Content-Type": "application/json" } }
     );
@@ -69,7 +71,7 @@ export const resetPassword = (token, password, confirmPassword) => async (dispat
     dispatch(forgotResetPassSlice.actions.resetPasswordRequest());
     try {
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/user/password/reset/${token}`,
+        `${url}/api/v1/user/password/reset/${token}`,
         { password, confirmPassword },
         {
           withCredentials: true,

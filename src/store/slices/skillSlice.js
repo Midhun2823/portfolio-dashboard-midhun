@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const url = import.meta.env.VITE_PORTFOLIO_BACKEND_URL;
+
 const skillSlice = createSlice({
   name: "skill",
   initialState: {
@@ -89,7 +91,7 @@ export const getAllSkills = () => async (dispatch) => {
   dispatch(skillSlice.actions.getAllSkillsRequest());
   try {
     const { data } = await axios.get(
-      "http://localhost:4000/api/v1/skill/getall",
+      `${url}/api/v1/skill/getall`,
       { withCredentials: true }
     );
     dispatch(skillSlice.actions.getAllSkillsSuccess(data.skills)); // data.skills -> skills is name given in the backend
@@ -105,7 +107,7 @@ export const addNewSkill = (data) => async (dispatch) => {
   dispatch(skillSlice.actions.addNewSkillRequest());
   try {
     const response = await axios.post(
-      "http://localhost:4000/api/v1/skill/add",
+      `${url}/api/v1/skill/add`,
       data,
       {
         withCredentials: true,
@@ -123,7 +125,7 @@ export const deleteSkill = (id) => async (dispatch) => {
   dispatch(skillSlice.actions.deleteSkillRequest());
   try {
     const { data } = await axios.delete(
-      `http://localhost:4000/api/v1/skill/delete/${id}`,
+      `${url}/api/v1/skill/delete/${id}`,
       { withCredentials: true }
     );
     dispatch(skillSlice.actions.deleteSkillSuccess(data.message));
@@ -137,7 +139,7 @@ export const updateSkill = (id, proficiency) => async (dispatch) => {
   dispatch(skillSlice.actions.updateSkillRequest());
   try {
     const { data } = await axios.put(
-      `http://localhost:4000/api/v1/skill/update/${id}`,
+      `${url}/api/v1/skill/update/${id}`,
       { proficiency },
       {
         withCredentials: true,
